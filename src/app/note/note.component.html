@@ -1,0 +1,81 @@
+<div class="main-content">
+    <button  mat-button  (click)="CloseDialog()" class="btn btn-danger btn-link btn-sm btn-just-icon close ">
+      <i class="material-icons">close</i>
+    </button>
+    <div class="container-fluid">
+      
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Note</h4>
+                        <p class="card-category">Formulaire d'enregistrement</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]='noteForm' (ngSubmit)="onUpload()">
+                              <div class="row">
+                                <div [formGroup]='noteForm' class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input type="text"
+                                           placeholder="Etape"
+                                           aria-label="Number"
+                                           matInput
+                                           [formControl]="myControl"
+                                           [matAutocomplete]="auto"
+                                           >
+                                    <mat-autocomplete #auto="matAutocomplete" >
+                                     
+                                      <mat-option *ngFor="let etapeCODEETAPE of filteredOptions | async" [value]="etapeCODEETAPE">
+                                        {{etapeCODEETAPE}}
+                                      </mat-option>
+                                
+                                    </mat-autocomplete>
+                                  </mat-form-field>
+                                </div>
+                                <div [formGroup]='noteForm' class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                        <mat-label>Semestre</mat-label>
+                                        <mat-select formControlName="semestreCODESEMESTRE" >
+                                          <mat-option *ngFor="let semestreCODESEMESTRE of listeSemestre" [value]="semestreCODESEMESTRE">
+                                            {{semestreCODESEMESTRE}}
+                                          </mat-option>
+                                        </mat-select>
+                                  </mat-form-field>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div [formGroup]='noteForm' class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-label>AnneeAcademique</mat-label>
+                                      <mat-select formControlName="anneeacadCODEANNEE" >
+                                        <mat-option *ngFor="let anneeacadCODEANNEE of listeAnneeacad" [value]="anneeacadCODEANNEE">
+                                          {{anneeacadCODEANNEE}}
+                                        </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                                </div>
+
+                                <div  class="col-md-6">
+                                     
+                                  <input type="file"  accept="application/pdf" (change)="onselect($event)" >
+                                     
+                               </div>  
+                              </div>
+                            <div class= "row">
+
+                              
+                              </div>
+                           
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Save</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+  
+   
+    

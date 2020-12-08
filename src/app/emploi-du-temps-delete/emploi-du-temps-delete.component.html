@@ -1,0 +1,30 @@
+<div class="main-content">
+    <button  mat-button  (click)="CloseDialog()" class="btn btn-danger btn-link btn-sm btn-just-icon close ">
+      <i class="material-icons">close</i>
+    </button>
+    <div class="container-fluid">
+      
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Emploi du temps</h4>
+                        <p class="card-category">Boite de dialogue</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]='emploiForm'>
+                            <p style="font-size: medium">Voulez vous vraiment supprimer ce fichier : {{emploiForm.value.namefile}} ?</p>
+                            <button mat-raised-button type="submit" (click)="onDeleteEmploiTemps()" class="btn btn-danger pull-right">Oui</button>
+                            <button mat-raised-button type="submit" (click)="CloseDialog()" class="btn btn-danger pull-left">non</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+  
+   
+    

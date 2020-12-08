@@ -1,0 +1,101 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Save User</h4>
+                        <p class="card-category">Formule de creation d'un nouveau utilisateur</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]='UserForm' (ngSubmit)="onUpload()">
+                            <div class="row">
+                                <div  [formGroup]='UserForm' class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                    <input  formControlName="username" matInput placeholder="Username">
+                                    </mat-form-field>
+                                </div>
+                                <div  [formGroup]='UserForm' class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                    <input  formControlName="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text' ">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide " 
+                                            [attr.aria-label]= "'Hide password'"
+                                            [attr.aria-pressed]="hide">
+                                            <i class="material-icons">
+                                                {{hide ? 'visibility_off' : 'visibility'}}
+                                            </i>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div [formGroup]='UserForm' class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <input  formControlName="nom" matInput placeholder="Nom" type="text">
+                                </mat-form-field>
+                                </div>
+                                <div [formGroup]='UserForm' class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <input  formControlName="prenom" matInput placeholder="Prenom" type="text">
+                                </mat-form-field>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                
+                               <!-- <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>ROLE</mat-label>
+                                    <mat-select>
+                                    <mat-option *ngFor="let role of roles" [value]="role.value">
+                                        {{role.viewValue}}
+                                    </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                </div>-->
+                            </div>
+                            <div class= "row">
+                            <div class="col-md-6">
+
+                                
+
+                                    <mat-form-field>
+                                    
+                                        <input  matInput placeholder="photo profile">
+                                       <!--<ngx-mat-file-input [formControl]="fileControl" [multiple]="multiple" [accept]="accept" [color]="color">
+                                        </ngx-mat-file-input>-->
+                                        
+                                            <i class="material-icons" matSuffix >folder</i>
+                                            
+                                    </mat-form-field>
+                                    
+                            </div>  
+                            
+                            </div>
+                        
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Save</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="javascript:void(0)">
+                            <img class="img" src="./assets/img/faces/marc.jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">Super/Admin </h6>
+                        <h4 class="card-title">Tchimi mike</h4>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

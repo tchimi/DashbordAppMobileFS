@@ -1,0 +1,75 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <button mat-fab (click)="onShowCreateDialog()" matTooltip="ajouter"  class="btn btn-warning">
+                <i  role="presentation" class="material-icons">add</i>
+            </button>
+            <div class="col-md-12">
+                <div class="card">
+                            
+                    <div class="card-header card-header-danger">
+                                      
+                        <h4 class="card-title ">Tableau</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <mat-card>
+                                <table mat-table [dataSource]="dataSource"  matSort   class="mat-elevation-z8" class="table">
+                                  <!-- Id Column -->
+                                 <!-- <ng-container matColumnDef="Etape">
+                                    <th mat-header-cell *matHeaderCellDef  mat-sort-header  class=" text-primary" ><strong>Etape</strong></th>
+                                    <td mat-cell *matCellDef="let element"> {{element.etapeCODEETAPE.codeEtape}} </td>
+                                  </ng-container>-->
+                            
+                                  <!-- Name Column -->
+                                  <ng-container matColumnDef="Annee_Academique">
+                                    <th mat-header-cell *matHeaderCellDef  mat-sort-header class="text-primary"> <strong>Annee_Academique</strong> </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.anneeacadCODEANNEE.codeAnnee}} </td>
+                                  </ng-container>
+
+                                   <!-- Name Column -->
+                                   <ng-container matColumnDef="Semestre">
+                                    <th mat-header-cell *matHeaderCellDef  mat-sort-header class="text-primary">  <strong>Semestre</strong>  </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.semestreCODESEMESTRE.codeSemestre}} </td>
+                                  </ng-container>
+
+                                   <!-- Name Column -->
+                                   <ng-container matColumnDef="Fichier">
+                                    <th mat-header-cell *matHeaderCellDef  mat-sort-header class="text-primary"> <strong>Fichier</strong> </th>
+                                  
+                                    <td mat-cell *matCellDef="let element"  mat-cell><a mat-button   (click)="onDownload(element.namefile)"> {{element.namefile}} </a> </td>
+                                  </ng-container>
+                            
+                            
+                                  <ng-container matColumnDef="option">
+                                    <th *matHeaderCellDef  mat-header-cell class=" text-primary"><strong>Option</strong> </th>
+                                    <td *matCellDef="let row" mat-cell>
+                                        <button mat-raised-button (click)="onShowCreateDialogDelete(row) "  type="button" matTooltip="supprimer"  class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                            
+                                  </ng-container>
+                            
+                                  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+                                  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+                                </table>
+                            
+                                <mat-paginator #paginator
+                                              [pageSize]="5"
+                                              [pageSizeOptions]="[5,10]">
+                            
+                                </mat-paginator>
+                              </mat-card>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  
+
